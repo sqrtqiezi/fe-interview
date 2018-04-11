@@ -43,7 +43,7 @@ class App extends Component {
         {images.map(
           (image, index) => (
             <Item 
-              key={index}
+              key={image.id}
               src={image.src}
               showModel={() => this.showModel(index)}
             />
