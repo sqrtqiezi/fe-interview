@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Item from './components/Item'
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    // mock images
+    const images = [];
+    for(let i = 0; i < 14; i++) {
+      images.push(`https://picsum.photos/640/480/?image=${i+10}`);
+    }
+
+    this.state = { images };
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="grid App">
+        {this.state.images.map((image, index) => (<Item key={index} image={image} />))}
       </div>
     );
   }
