@@ -12,7 +12,6 @@ export const images =
       }
       case IMAGES_FETCH_SUCCESS: {
         const images = action.response.data.result;
-        console.log(images);
         return {
           status: Status.SUCCESS,
           images: images,
