@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Item = ({ image }) => (
-  <div className="item" tabIndex="1">
+const Item = ({ src, showModel }) => (
+  <div className="item">
     <div className="box">
-      <img src={image} alt=""/>
+      <img src={src} onClick={showModel} alt=""/>
     </div>
   </div>
 )
 
 Item.propTypes = {
-  image: PropTypes.string.isRequired
+  src: PropTypes.string.isRequired
 };
 
 export default Item;
